@@ -1,0 +1,36 @@
+<?php
+/* @var $block Bricks_Search_Block_Widget */
+$block = $this;
+$inputId = uniqid('search_');
+static $_addJs = true;
+if ($_addJs):
+	$_addJs = false;
+?>
+	<script type="text/javascript" src="<?php echo $block->getSkinUrl('js/bricks/jquery-ui.min.js'); ?>"></script>
+	<link rel="stylesheet" href="<?php echo $block->getSkinUrl('css/bricks/jquery-ui.min.css') ; ?>" />
+	<link rel="stylesheet" href="<?php echo $block->getSkinUrl('css/bricks/jquery-ui.theme.min.css') ; ?>" />
+<?php endif; ?>
+
+<input type="search" id="<?php echo $inputId; ?>" value="" class="search" autocomplete="off" placeholder="Search..." />
+<script type="text/javascript">jQuery(function($){
+	$('#<?php echo $inputId; ?>').autocomplete({
+		minLength: 3,
+		source: function(request, response) {
+			$.ajax({
+				url: '<?php echo Mage::getUrl('suggesturl/ajax/'); ?>',
+				dataType: 'json',
+				data: {q: request.term},
+				success: function(data) {
+					response(data);
+				}
+			});
+		},
+		select: function(e, ui) {
+			window.location.href = ui.item.url;
+		}
+	}).autocomplete('instance')._renderItem = function(ul, item) {
+		return $('<li>')
+			.append('<a href="' + item.url + '">' + item.term + '</a>')
+			.appendTo(ul);
+	};
+});</script>

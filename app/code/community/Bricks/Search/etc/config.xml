@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Bricks_Search>
+			<version>0.0.1</version>
+		</Bricks_Search>
+	</modules>
+
+	<!-- Global Configuration -->
+	<global>
+		<blocks>
+			<bricks_search>
+				<class>Bricks_Search_Block</class>
+			</bricks_search>
+		</blocks>
+
+		<models>
+			<bricks_search>
+				<class>Bricks_Search_Model</class>
+				<resourceModel>bricks_search_resource</resourceModel>
+			</bricks_search>
+
+			<bricks_search_resource>
+				<class>Bricks_Search_Model_Resource</class>
+				<entities>
+					<search>
+						<table>bricks_search</table>
+					</search>
+				</entities>
+			</bricks_search_resource>
+		</models>
+
+		<resources>
+			<bricks_search_setup>
+				<setup>
+					<module>Bricks_Search</module>
+					<class>Bricks_Search_Model_Resource_Setup</class>
+				</setup>
+			</bricks_search_setup>
+		</resources>
+
+		<events></events>
+
+		<helpers>
+			<bricks_search>
+				<class>Bricks_Search_Helper</class>
+			</bricks_search>
+		</helpers>
+	</global>
+
+	<!-- Frontend Config -->
+	<frontend>
+		<routers>
+			<bricks_search>
+				<use>standard</use>
+				<args>
+					<module>Bricks_Search</module>
+					<frontName>suggesturl</frontName>
+				</args>
+			</bricks_search>
+		</routers>
+	</frontend>
+
+	<!-- Admin Config -->
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<use>admin</use>
+					<modules>
+						<Bricks_Search before="Mage_Adminhtml">Bricks_Search_Adminhtml</Bricks_Search>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<!-- Adminhtml Config -->
+	<adminhtml>
+		<layout>
+			<updates>
+				<bricks_search>
+					<file>bricks/search.xml</file>
+				</bricks_search>
+			</updates>
+		</layout>
+	</adminhtml>
+</config>

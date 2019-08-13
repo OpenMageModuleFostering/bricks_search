@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+	<adminhtml_search_index>
+		<reference name="content">
+			<block type="bricks_search/adminhtml_search" name="search_keywords"></block>
+		</reference>
+	</adminhtml_search_index>
+
+	<adminhtml_search_grid>
+		<block type="core/text_list" name="root" output="toHtml">
+			<block type="bricks_search/adminhtml_grid" name="search_keywords"></block>
+		</block>
+	</adminhtml_search_grid>
+
+	<adminhtml_search_new>
+		<reference name="content">
+			<block type="bricks_search/adminhtml_new" name="search_keywords_new"></block>
+		</reference>
+	</adminhtml_search_new>
+
+	<adminhtml_search_edit>
+		<reference name="content">
+			<block type="bricks_search/adminhtml_edit" name="search_keywrods_edit"></block>
+		</reference>
+	</adminhtml_search_edit>
+</layout>

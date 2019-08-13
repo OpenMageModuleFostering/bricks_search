@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<menu>
+		<system>
+			<children>
+				<bricks_search translate="title" module="bricks_search">
+					<title>Search Keywords</title>
+					<action>adminhtml/search/</action>
+					<sort_order>100</sort_order>
+				</bricks_search>
+			</children>
+		</system>
+	</menu>
+
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<bricks_search translate="title" module="bricks_search">
+								<title>Search Keywords</title>
+							</bricks_search>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

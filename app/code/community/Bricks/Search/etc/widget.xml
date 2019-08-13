@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+	<bricks_search type="bricks_search/widget">
+		<name>Search Widget</name>
+		<description type="desc">Autosuggest Search Widget</description>
+	</bricks_search>
+</widgets>
