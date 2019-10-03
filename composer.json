@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Bricks_Search",
+    "name": "OpenMageModuleFostering\/Bricks_Search",
     "type": "magento-module",
     "license": "OSL-3.0",
     "homepage": "",
     "description": "Bricks_Search",
     "authors": [
-    {
-        "name": "adam",
-        "email": "adam@bricksandmortarsweb.com"
-    }
-],
+        {
+            "name": "adam",
+            "email": "adam@bricksandmortarsweb.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
